@@ -1,7 +1,7 @@
 import cv2 as cv
 import time
 
-cap = cv.VideoCapture('xKtyrgHxyOAAdcAS.mp4')
+cap = cv.VideoCapture('ssstwitter.com_1693888084809.mp4')
 
 while cap.isOpened():
     ret, frame = cap.read()
