@@ -20,9 +20,14 @@ while 1:
     if frame is None:
         break
     hsv = cv.cvtColor(frame, cv.COLOR_BGR2HSV)
-    
     mask = cv.inRange(hsv, lower_yellow, upper_yellow)
-    res = cv.bitwise_and(frame, frame, mask=mask)
+    
+    # 膨胀
+    kernel = np.ones((5, 5), np.uint8)
+    mask = cv.morphologyEx(mask, cv.MORPH_OPEN, kernel) # 开运算: 先侵蚀再膨胀, 消除背景中的噪声
+    mask = cv.dilate(mask, kernel, iterations=1) # 膨胀
+    
+    res = cv.bitwise_and(frame, frame, mask=mask) # 与运算
     
     cv.imshow('frame',frame)
     cv.imshow('mask',mask)

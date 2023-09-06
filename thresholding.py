@@ -1,10 +1,11 @@
+'''
+阈值处理
+'''
+
 import numpy as np
 import cv2 as cv
 from matplotlib import pyplot as plt
 
-'''
-阈值处理
-'''
 img = cv.imread('keyboard.jpg')
 
 pts1 = np.float32([[168,429],[1476,451],[35,840],[1637,826]])
@@ -20,7 +21,7 @@ cv.polylines(img, [pts3], isClosed=True, color=(0, 255, 0), thickness=3)
 
 # 灰度处理
 th1 = cv.cvtColor(dst, cv.COLOR_BGR2GRAY)
-th2 = cv.medianBlur(th1,5)
+th2 = th1
 
 # 二值化阈值处理
 ret,xh1 = cv.threshold(th2,55,255,cv.THRESH_BINARY)

@@ -16,3 +16,7 @@
 - [几何变换](transformations.py)
 - [视角转换](perspective_transformation.py)
 - [阈值处理](thresholding.py)
+- [图像平滑/模糊](smoothing.py)
+- [形态变换](morphological.py)
+- [图像梯度](gradients.py)
+- [Canny边缘检测](edge_detection_canny.py)
