@@ -20,3 +20,5 @@
 - [形态变换](morphological.py)
 - [图像梯度](gradients.py)
 - [Canny边缘检测](edge_detection_canny.py)
+- [图像金字塔/分辨率采样](pyramids.py)
+- [轮廓特征](contour.py)

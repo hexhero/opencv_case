@@ -41,12 +41,19 @@ ret3,xh5 = cv.threshold(blur,0,255,cv.THRESH_BINARY+cv.THRESH_OTSU)
 
 
 plt.subplot(331),plt.imshow(img),plt.title('Input') # 331 3行3列第一个
+plt.xticks([]), plt.yticks([])
 plt.subplot(332),plt.imshow(dst),plt.title('Output')
+plt.xticks([]), plt.yticks([])
 plt.subplot(333),plt.imshow(xh1),plt.title('THRESH_BINARY')
+plt.xticks([]), plt.yticks([])
 plt.subplot(334),plt.imshow(xh2),plt.title('ADAPTIVE_THRESH_MEAN_C')
+plt.xticks([]), plt.yticks([])
 plt.subplot(335),plt.imshow(xh3),plt.title('ADAPTIVE_THRESH_GAUSSIAN_C')
+plt.xticks([]), plt.yticks([])
 plt.subplot(336),plt.imshow(xh4),plt.title('THRESH_BINARY + THRESH_OTSU')
+plt.xticks([]), plt.yticks([])
 plt.subplot(337),plt.imshow(xh5),plt.title('BLUR + OTSU')
+plt.xticks([]), plt.yticks([])
 plt.subplot(338),plt.imshow(th2),plt.title('GRAY')
 
 plt.show()
