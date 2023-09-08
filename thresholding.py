@@ -1,10 +1,11 @@
+'''
+阈值处理
+'''
+
 import numpy as np
 import cv2 as cv
 from matplotlib import pyplot as plt
 
-'''
-阈值处理
-'''
 img = cv.imread('keyboard.jpg')
 
 pts1 = np.float32([[168,429],[1476,451],[35,840],[1637,826]])
@@ -20,7 +21,7 @@ cv.polylines(img, [pts3], isClosed=True, color=(0, 255, 0), thickness=3)
 
 # 灰度处理
 th1 = cv.cvtColor(dst, cv.COLOR_BGR2GRAY)
-th2 = cv.medianBlur(th1,5)
+th2 = th1
 
 # 二值化阈值处理
 ret,xh1 = cv.threshold(th2,55,255,cv.THRESH_BINARY)
@@ -40,12 +41,19 @@ ret3,xh5 = cv.threshold(blur,0,255,cv.THRESH_BINARY+cv.THRESH_OTSU)
 
 
 plt.subplot(331),plt.imshow(img),plt.title('Input') # 331 3行3列第一个
+plt.xticks([]), plt.yticks([])
 plt.subplot(332),plt.imshow(dst),plt.title('Output')
+plt.xticks([]), plt.yticks([])
 plt.subplot(333),plt.imshow(xh1),plt.title('THRESH_BINARY')
+plt.xticks([]), plt.yticks([])
 plt.subplot(334),plt.imshow(xh2),plt.title('ADAPTIVE_THRESH_MEAN_C')
+plt.xticks([]), plt.yticks([])
 plt.subplot(335),plt.imshow(xh3),plt.title('ADAPTIVE_THRESH_GAUSSIAN_C')
+plt.xticks([]), plt.yticks([])
 plt.subplot(336),plt.imshow(xh4),plt.title('THRESH_BINARY + THRESH_OTSU')
+plt.xticks([]), plt.yticks([])
 plt.subplot(337),plt.imshow(xh5),plt.title('BLUR + OTSU')
+plt.xticks([]), plt.yticks([])
 plt.subplot(338),plt.imshow(th2),plt.title('GRAY')
 
 plt.show()

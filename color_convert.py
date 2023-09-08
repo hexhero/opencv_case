@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 # 定义 RGB 色值
-r, g, b = 255, 0, 0
+r, g, b = 228, 132, 12
 
 # 将 RGB 色值转换为 HSV 色值
 rgb = np.uint8([[[b, g, r]]])
