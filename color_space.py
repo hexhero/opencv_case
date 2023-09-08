@@ -9,16 +9,17 @@ import time
 # fiags = [i for i in dir(cv) if i.startswith('COLOR_')]
 # print(fiags)
 
-cap = cv.VideoCapture('ssstwitter.com_1693888084809.mp4')
+cap = cv.VideoCapture('http://192.168.31.197:8080/video')
 
-lower_yellow = np.array([16, 160, 160])
-upper_yellow = np.array([18, 250, 250])
+lower_yellow = np.array([0, 50, 50])
+upper_yellow = np.array([3, 255, 255])
 
 
 while 1:
     _, frame = cap.read()
     if frame is None:
         break
+    frame = cv.resize(frame, None, fx=0.5, fy=0.5 ,interpolation=cv.INTER_CUBIC)
     hsv = cv.cvtColor(frame, cv.COLOR_BGR2HSV)
     
     mask = cv.inRange(hsv, lower_yellow, upper_yellow)
