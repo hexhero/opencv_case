@@ -26,3 +26,4 @@
 - [检测点是否在轮廓中-作业](contour_task.py)
 - [直方图绘制&计算](histogram1.ipynb) 统计像素值分布
 - [直方图均衡(对比度)](histogram2.ipynb) 校正对比度
+- [直方图反投影](histogram_backprojection.py) 它基于图像的颜色直方图，通过将目标对象的颜色分布映射回输入图像，从而实现目标区域的提取。
