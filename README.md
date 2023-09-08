@@ -22,3 +22,6 @@
 - [Canny边缘检测](edge_detection_canny.py)
 - [图像金字塔/分辨率采样](pyramids.py)
 - [轮廓特征](contour.py)
+- [更多轮廓特征-形状匹配](contour_more.py)
+- [检测点是否在轮廓中-作业](contour_task.py)
+- [直方图绘制&计算](histogram1.py)

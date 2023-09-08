@@ -16,17 +16,41 @@ ret,thresh = cv.threshold(img,127,255,0)
 contours,hierarchy = cv.findContours(thresh, 1, 2)
 cnt = contours[0]
 
-# 计算轮廓的矩
-M = cv.moments(cnt)
+# 轮廓属性
+M = cv.moments(cnt) # 计算轮廓的矩
 print(M)
 
-# 计算轮廓的面积
-area = cv.contourArea(cnt)
+area = cv.contourArea(cnt) # 计算轮廓的面积
 print(area)
 
-# 计算轮廓的周长
-perimeter = cv.arcLength(cnt,True)
+perimeter = cv.arcLength(cnt,True) # 计算轮廓的周长
 print(perimeter)
+
+# 轮廓特征
+
+# 宽高比
+x,y,w,h = cv.boundingRect(cnt)
+aspect_ratio = float(w)/h
+print(aspect_ratio)
+
+# 范围 轮廓面积与边界矩形面积的比
+rect_area = w*h
+extent = float(area)/rect_area
+print(extent)
+
+# 坚固性 坚固度是等高线面积与其凸包面积的比率。
+hull = cv.convexHull(cnt)
+hull_area = cv.contourArea(hull)
+solidity = float(area)/hull_area
+print(solidity)
+
+# 等效直径 是面积与等值线面积相同的圆的直径。
+equi_diameter = np.sqrt(4*area/np.pi)
+print(equi_diameter)
+
+# 定位 方向是对象定向的角度。以下方法还给出了长轴和短轴长度。
+(x,y),(MA,ma),angle = cv.fitEllipse(cnt) 
+print(x,y,MA,ma,angle)
 
 # 轮廓近似
 epsilon = 0.1*cv.arcLength(cnt,True) # 0.1是精度, 越小越精确，轮廓点越多，越接近原图
