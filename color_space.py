@@ -16,7 +16,7 @@ upper_yellow = np.array([18, 250, 250])
 
 
 while 1:
-    time.sleep(0.1)
+    # time.sleep(0.1)
     _, frame = cap.read()
     if frame is None:
         break

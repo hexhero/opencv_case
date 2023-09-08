@@ -1,28 +1,28 @@
 # OpenCV Case
 
-- [图片混合](addition.py)
-- [图片计算](bitwise.py)
-- [图片边框](border.py)
-- [图片通道](channel.py)
-- [绘图](drawing.py)
-- [基础属性](image_basic_attr.py)
-- [剪切](image_cut.py)
-- [定位工具](img_position.py)
+- [图片混合](addition.py) 
+- [图片计算](bitwise.py) 取反，与，或，异或 遮罩
+- [图片边框](border.py) 
+- [图片通道](channels.py) 
+- [绘图](drawing.py) 
+- [基础属性](image_basic_attr.py) 尺寸，通道，数据类型
+- [剪切](image_cut.py) 
+- [定位工具](img_position.py) 
 - [鼠标事件](mouse.py)
 - [播放视频](play_video.py)
 - [滑动按钮](track_bar.py)
 - [* 性能优化](https://docs.opencv.org/4.x/dc/d71/tutorial_py_optimization.html)
-- [颜色空间](color_space.py)
-- [几何变换](transformations.py)
-- [视角转换](perspective_transformation.py)
-- [阈值处理](thresholding.py)
+- [颜色空间](color_space.py) 提取颜色阈值
+- [几何变换](transformations.py) 缩放，平移，旋转
+- [视角转换](perspective_transformation.py) 透视变换
+- [阈值处理](thresholding.py) 二值化
 - [图像平滑/模糊](smoothing.py)
-- [形态变换](morphological.py)
-- [图像梯度](gradients.py)
-- [Canny边缘检测](edge_detection_canny.py)
-- [图像金字塔/分辨率采样](pyramids.py)
-- [轮廓特征](contour.py)
+- [形态变换](morphological.py) 侵蚀 膨胀 开运算 闭运算
+- [图像梯度](gradients.py)  
+- [Canny边缘检测](edge_detection_canny.py) 图片边缘，轮廓
+- [图像金字塔/分辨率采样](pyramids.py) 多分辨率采样
+- [轮廓特征](contour.py) 轮廓面积，周长，近似，凸包，凸缺陷
 - [更多轮廓特征-形状匹配](contour_more.py)
 - [检测点是否在轮廓中-作业](contour_task.py)
-- [直方图绘制&计算](histogram1.py)
-- [直方图均衡](histogram2.ipynb)
+- [直方图绘制&计算](histogram1.ipynb) 统计像素值分布
+- [直方图均衡(对比度)](histogram2.ipynb) 校正对比度
