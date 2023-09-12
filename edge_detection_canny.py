@@ -8,7 +8,7 @@ from matplotlib import pyplot as plt
 
 cv.namedWindow('canny')
 
-img = cv.imread('messi.png', cv.IMREAD_GRAYSCALE)
+img = cv.imread('minesweeper.png', cv.IMREAD_GRAYSCALE)
 
 cv.createTrackbar('Min','canny',0,255,lambda x:None)
 cv.createTrackbar('Max','canny',0,255,lambda x:None)
