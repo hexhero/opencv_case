@@ -27,28 +27,28 @@ if len(good) > MIN_MATCH_COUNT:
     M, mask = cv.findHomography(src_pts, dst_pts, cv.RANSAC, 5.0)
     
     # 透视矩阵变换
-    result = cv.warpPerspective(img2, M, (img1.shape[1], img1.shape[0]))
-    combined = np.concatenate((img1, result), axis=1)
+    # result = cv.warpPerspective(img2, M, (img1.shape[1], img1.shape[0]))
+    # combined = np.concatenate((img1, result), axis=1)
     
-    plt.subplot(131),plt.imshow(img1, 'gray')
-    plt.subplot(132),plt.imshow(img2, 'gray')
-    plt.subplot(133),plt.imshow(combined, 'gray')
-    plt.show()
+    # plt.subplot(131),plt.imshow(img1, 'gray')
+    # plt.subplot(132),plt.imshow(img2, 'gray')
+    # plt.subplot(133),plt.imshow(combined, 'gray')
+    # plt.show()
     
     
-    # matchesMask = mask.ravel().tolist()
-    # h, w = img1.shape
-    # pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]
-    #                  ).reshape(-1, 1, 2)
-    # dst = cv.perspectiveTransform(pts, M)
-    # img2 = cv.polylines(img2, [np.int32(dst)], True, 255, 3, cv.LINE_AA)
+    matchesMask = mask.ravel().tolist()
+    h, w = img1.shape
+    pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]
+                     ).reshape(-1, 1, 2)
+    dst = cv.perspectiveTransform(pts, M)
+    img2 = cv.polylines(img2, [np.int32(dst)], True, 255, 3, cv.LINE_AA)
 else:
     print("Not enough matches are found - {}/{}".format(len(good), MIN_MATCH_COUNT))
     matchesMask = None
 
-# draw_params = dict(matchColor=(0, 255, 0),  # draw matches in green color
-#                    singlePointColor=None,
-#                    matchesMask=matchesMask,  # draw only inliers
-#                    flags=2)
-# img3 = cv.drawMatches(img1, kp1, img2, kp2, good, None, **draw_params)
-# plt.imshow(img3, 'gray'), plt.show()
+draw_params = dict(matchColor=(0, 255, 0),  # draw matches in green color
+                   singlePointColor=None,
+                   matchesMask=matchesMask,  # draw only inliers
+                   flags=2)
+img3 = cv.drawMatches(img1, kp1, img2, kp2, good, None, **draw_params)
+plt.imshow(img3, 'gray'), plt.show()
