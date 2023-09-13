@@ -24,6 +24,8 @@ edges = cv.Canny(gray,50,150,apertureSize = 3)
 #     cv.line(img,(x1,y1),(x2,y2),(0,0,255),2)
  
 # 概率霍夫变换  概率霍夫变换是我们看到的霍夫变换的优化。
+# 1：表示距离分辨率，即以像素为单位的距离精度。这里使用 1 像素。
+# 100 表示最小直线长度，小于此值的直线将被丢弃。
 # minLineLength=100：表示检测到的直线的最小长度。小于该长度的直线将被丢弃。
 # maxLineGap=10：表示将同一直线上的断裂部分连接在一起的最大允许间隙。
 # 函数返回一个包含检测到的直线的数组，每条直线由起点和终点的坐标表示。可以使用这些坐标来在图像上绘制检测到的直线。
@@ -31,7 +33,7 @@ lines = cv.HoughLinesP(edges,1,np.pi/180,100,minLineLength=100,maxLineGap=10)
 print(len(lines))
 for line in lines:
     x1,y1,x2,y2 = line[0]
-    cv.line(img,(x1,y1),(x2,y2),(0,255,0),2)
+    cv.line(img,(x1,y1),(x2,y2),(255,0,0),2)
 
 cv.imshow('houghlines',img)
 cv.waitKey(0)

@@ -31,3 +31,11 @@
 - [模板匹配](template_matching.py)
 - [霍夫线检测](houghlines.py)
 - [霍夫圆检测](houghcircles.py)
+- [分水岭算法分隔图像](watershed.py)
+- [GrabCut 交互式前景提取](grabcut.py)
+- 特征检测
+    - [Harris角点检测](harris_corner_detection.py)
+    - [Shi-Tomasi 角点检测](shi_tomasi_corner_detection.py)
+    - [SIFT 尺度不变特征变换](sift.py) 当图像比例发生变化时，哈里斯角探测器不够好。Lowe开发了一种突破性的方法来寻找尺度不变的特征，它被称为
+    - [SURF 加速稳健特征](surf.py) SIFT真的很好，但不够快，所以人们想出了一个叫做SURF的加速版本。
+    - [特征匹配](feature_matching.py)
